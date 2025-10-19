@@ -19,6 +19,10 @@ export default () => ({
     synchronize: process.env.NODE_ENV == "prod" ? true : true,
     autoLoadEntities: true,
     logging: ["error"],
+    ssl:
+      process.env.DB_SSL === "true"
+        ? { rejectUnauthorized: false } // enable SSL
+        : false, // disable for local env
   },
   jwt: {
     expiresIn: process.env.EXPIRES_IN || "7200",
