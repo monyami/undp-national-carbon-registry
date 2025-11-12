@@ -41,6 +41,14 @@ export const API_PATHS = {
   CB_RETIRE_COINTRY_QUERY: "national/organisation/countries",
   CREDIT_RETIREMENT_REQUEST:
     "national/creditTransactionsManagement/retireRequest",
+  // ACTION MANAGEMENT
+  ACTION_CREATE: "national/actionManagement/create",
+  ACTION_QUERY: "national/actionManagement/query",
+  ACTION_BY_ID: (actionId: string) => `national/actionManagement/${actionId}`,
+  ACTION_UPDATE: (actionId: string) => `national/actionManagement/update/${actionId}`,
+  ACTION_DELETE: (actionId: string) => `national/actionManagement/delete/${actionId}`,
+  ACTION_SEARCH: "national/actionManagement/search",
+  ACTION_BY_TYPE: (type: string) => `national/actionManagement/type/${type}`,
   CREDIT_RETIREMENT_PERFROM:
     "national/creditTransactionsManagement/performRetireAction",
   CREDIT_TRANSFER_REQUEST: "national/creditTransactionsManagement/transfer",

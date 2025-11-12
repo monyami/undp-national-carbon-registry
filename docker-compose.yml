@@ -12,7 +12,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: "<ANY PASSOWORD>"
+      POSTGRES_PASSWORD: "root"
       POSTGRES_USER: root
       PSQL_USERNAME: root
       # POSTGRES_HOST_AUTH_METHOD: trust
@@ -31,18 +31,18 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: "<ANY PASSOWORD>"
+      DB_PASSWORD: "root"
       RUN_MODULE: national-api
-      rootEmail: <ROOT EMAIL>
+      rootEmail: 10thecrew01@gmail.com
       cfAdminEmail: <CLIMATE FUND ADMIN EMAIL>
       exComAdminEmail: <EXCECUTIVE COMMITTEE ADMIN EMAIL>
       Ministry: ""
       Department: ""
-      systemCountryCode: "NG"
-      systemCountryName: "CountryX"
+      systemCountryCode: "ME"
+      systemCountryName: "Montenegro"
       systemContinentName: "CountryX"
       countryClimateFundName: "CountryX Climate Fund (Pvt) Ltd"
-      name: "Antactic Region"
+      name: "Antaractic Region"
       climateFundName: "Zimbabwe Climate Fund"
       exComName: "Executive Committee"
       logoBase64: "sss"
@@ -72,6 +72,8 @@ services:
       RATE_LIMIT_ORGANISATION_DURATION: 60
     volumes:
       - filestore:/app/backend/services/public
+      - ./backend/services/src:/app/backend/services/src
+      - ./backend/services/libs:/app/backend/services/libs
   stats:
     build:
       context: .
@@ -84,10 +86,13 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: "<ANY PASSOWORD>"
+      DB_PASSWORD: "root"
       RUN_PORT: 3100
       RUN_MODULE: analytics-api
       DOMAIN_MAP: "true"
+    volumes:
+      - ./backend/services/src:/app/backend/services/src
+      - ./backend/services/libs:/app/backend/services/libs
   replicator:
     build:
       context: .
@@ -98,7 +103,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: "<ANY PASSOWORD>"
+      DB_PASSWORD: "root"
       # ,data-importer
       RUN_MODULE: replicator,async-operations-handler
       LOCATION_SERVICE: OPENSTREET
@@ -118,6 +123,8 @@ services:
       BACKEND_HOST: "http://192.168.1.16:3000"
     volumes:
       - filestore:/app/backend/services/public
+      - ./backend/services/src:/app/backend/services/src
+      - ./backend/services/libs:/app/backend/services/libs
   # async-operations-handler:
   #   build:
   #     context: .
@@ -152,3 +159,6 @@ services:
     depends_on:
       - db
       - national
+    volumes:
+      - ./web/src:/app/web/src
+      - ./web/public:/app/web/public

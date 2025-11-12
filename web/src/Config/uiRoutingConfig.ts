@@ -57,7 +57,10 @@ export const ROUTES = {
   //NDC
   VIEW_NDC: '/ndcManagement/view',
   VIEW_ALL_NDC: '/ndcManagement/viewAll',
+  VIEW_NDC_ACTIONS: '/ndcManagement/viewAll',
   ADD_NDC_ACTION: '/programmeManagement/addNdcAction',
+  //ACTION
+  VIEW_ACTIONS: '/actionManagement',
   //SITE-VISIT
   SITE_VISIT_CHECKLIST: (id: string) => `/programmeManagement/siteVisitCheckList/${id}`,
   SITE_VISIT_REPORT_BY_PROGRAMME_ID: (programmeId: any) =>

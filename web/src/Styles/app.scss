@@ -278,6 +278,7 @@ body {
 }
 
 .content-card {
+  position: relative;
   background-color: variables.$outside-background-color;
   border-radius: 10px;
   width: 100%;

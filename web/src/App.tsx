@@ -57,6 +57,8 @@ import { CreditBalancePage } from "./Pages/CreditPages/creditBalancePage";
 import { CreditTransfersPage } from "./Pages/CreditPages/creditTransfersPage";
 import { CreditRetirementsPage } from "./Pages/CreditPages/creditRetirementsPage";
 import Reports from "./Pages/Reports/Reports";
+import ActionManagement from "./Pages/ActionManagement/ActionManagement";
+import AddAction from "./Pages/ActionManagement/AddAction";
 
 const App = () => {
   const { t } = useTranslation(["common"]);
@@ -248,6 +250,15 @@ const App = () => {
                     >
                       <Route path="viewAll" element={<NdcActionManagement />} />
                       <Route path="view" element={<NdcActionView />} />
+                    </Route>
+                    <Route
+                      path="/actionManagement"
+                      element={
+                        <CustomLayout selectedKey="actionManagement" />
+                      }
+                    >
+                      <Route path="" element={<ActionManagement />} />
+                      <Route path="addAction" element={<AddAction />} />
                     </Route>
                     <Route
                       path="/companyManagement"

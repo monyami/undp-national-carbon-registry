@@ -13,6 +13,7 @@ import {
   UnorderedListOutlined,
   UserOutlined,
   SwapOutlined,
+  FileTextOutlined,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { LayoutSiderProps } from "../../Definitions/Definitions/layout.sider.definitions";
@@ -77,6 +78,7 @@ const LayoutSider = (props: LayoutSiderProps) => {
     // getItem(t('nav:transfers'), 'creditTransfers/viewAll', <Icon.ArrowLeftRight />),
     getItem(t("nav:companies"), "companyManagement/viewAll", <ShopOutlined />),
     getItem(t("nav:users"), "userManagement/viewAll", <UserOutlined />),
+    getItem(((t("nav:actions") as unknown as string) || "Actions").replace(/^./, (c) => c.toUpperCase()), "actionManagement", <FileTextOutlined />),
   ];
 
   if (

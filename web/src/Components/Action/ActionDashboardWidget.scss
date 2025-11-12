@@ -1,0 +1,144 @@
+.action-dashboard-widget {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+
+  .ant-card-head {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 24px;
+
+    .ant-card-head-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .ant-card-head-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #262c3c;
+      }
+
+      .ant-btn-link {
+        padding: 0 8px;
+        color: #1890ff;
+
+        &:hover {
+          color: #0050b3;
+        }
+      }
+    }
+  }
+
+  .ant-card-body {
+    padding: 24px;
+
+    .stats-row {
+      .ant-statistic {
+        .ant-statistic-title {
+          font-size: 12px;
+          color: #8c8c8c;
+          margin-bottom: 8px;
+        }
+
+        .ant-statistic-content {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .ant-list {
+      .ant-list-item {
+        cursor: pointer;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: #fafafa;
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        .action-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 8px;
+
+          > span {
+            flex: 1;
+            font-weight: 500;
+            color: #262c3c;
+          }
+
+          .action-tags {
+            display: flex;
+            gap: 4px;
+            flex-shrink: 0;
+          }
+        }
+
+        .action-description {
+          display: flex;
+          gap: 16px;
+          font-size: 12px;
+          color: #8c8c8c;
+
+          p {
+            margin: 0;
+
+            strong {
+              color: #262c3c;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-empty {
+      padding: 24px 0;
+
+      .ant-empty-description {
+        color: #8c8c8c;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .action-dashboard-widget {
+    .ant-card-body {
+      padding: 16px;
+
+      .stats-row {
+        .ant-statistic-content {
+          font-size: 18px;
+        }
+      }
+
+      .ant-list-item {
+        .action-title {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .action-tags {
+            width: 100%;
+          }
+        }
+
+        .action-description {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+    }
+  }
+}
